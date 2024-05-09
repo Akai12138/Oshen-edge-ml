@@ -52,7 +52,7 @@ X_train, X_temp, y_train, y_temp = train_test_split(X, y, test_size=0.4, random_
 X_val, X_test, y_val, y_test = train_test_split(X_temp, y_temp, test_size=0.5, random_state=42)
 
 # Training a KNN model
-knn = KNeighborsClassifier(n_neighbors=5)  # You can tune the number of neighbors here
+knn = KNeighborsClassifier(n_neighbors=10) 
 knn.fit(X_train, y_train)
 
 # Evaluate the model on validation and test sets
