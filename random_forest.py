@@ -4,6 +4,7 @@ import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
 from sklearn.model_selection import train_test_split
+from joblib import dump, load
 
 # Define the paths
 base_dir = "./AudioWAV"
@@ -63,3 +64,7 @@ print("Validation Set Evaluation:")
 print(classification_report(y_val, y_val_pred))
 print("Test Set Evaluation:")
 print(classification_report(y_test, y_test_pred))
+
+dump(rf, 'random_forest_model.joblib')
+model_size = os.path.getsize('random_forest_model.joblib')
+print("Model size in bytes:", model_size)
